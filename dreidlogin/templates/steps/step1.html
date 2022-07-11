@@ -1,0 +1,11 @@
+{% extends 'layouts/question.html' %} 
+
+{%block content%} 
+<form method="POST" action="{% url 'step1' %}"">
+{% csrf_token %} 
+<h1>So, let's start easy by telling me your name</h1>
+<input type="text" name="name" value="{{name}}" />
+<button>Next</button>
+
+</form>
+{%endblock%}

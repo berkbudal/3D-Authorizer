@@ -1,0 +1,17 @@
+{% extends 'layouts/base.html' %}
+{%block content%}
+    {% if human_list %}
+        {% for human in human_list %}
+        
+            <div {%if human.robot_name == robot_name%} class="bold" {% endif %}>
+                Name: {{human.name}}|
+                Age: {{human.age}} |
+                Gender: {{human.gender}} |
+                Location: {{human.city}} |
+                Hair Color: {{human.hair_color}} |
+                Height: {{human.height}}cm
+            </div>
+        {% endfor %}    
+    {% endif %}
+    <a href="{% url 'index' %}">Add human</a>
+{%endblock%}

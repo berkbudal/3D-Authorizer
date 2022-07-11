@@ -1,0 +1,25 @@
+{% extends 'layouts/question.html' %} 
+{% load get_item %}
+
+{%block content%} 
+<form method="POST" action="{% url 'step8' %}"">
+{% csrf_token %} 
+<h1>How tall are you in cm?</h1>
+<input type="number" name="height" value="{{height}}" />
+<p>In which field is the ring:</p>
+<ol>
+{% for answer in answers %}
+<li><label><input type="radio" name="answer" value="{{answer}}" {%if selected_answer == answer %}checked {%endif%} /> {{ answers|get_item:answer }}</label></li>
+{% endfor %}
+</ol>
+<hr />
+<a href="{% url 'step7' %}">Back</a>
+<button>Next</button>
+</form>
+{%endblock%}
+{%block scene%}
+<iframe width="1024" height="640" allowfullscreen src="https://v3d.net/93o"></iframe>
+
+{%endblock%}
+
+

@@ -1,0 +1,24 @@
+{% extends 'layouts/question.html' %} 
+{% load get_item %}
+
+{%block content%} 
+<form method="POST" action="{% url 'step3' %}"">
+{% csrf_token %} 
+<h1>Are you male, female, in between, outside? </h1>
+<input type="text" name="gender" value="{{gender}}" />
+<p>At which row is the sphere?</p>
+<ol>
+{% for answer in answers %}
+<li><label><input type="radio" name="answer" value="{{answer}}" {%if selected_answer == answer %}checked {%endif%} /> {{ answers|get_item:answer }}</label></li>
+{% endfor %}
+</ol>
+<hr />
+<a href="{% url 'step2' %}">Back</a>
+<button>Next</button>
+</form>
+{%endblock%}
+
+{%block scene%}
+<iframe width="1024" height="640" allowfullscreen src="https://v3d.net/93m"></iframe>
+{%endblock%}
+

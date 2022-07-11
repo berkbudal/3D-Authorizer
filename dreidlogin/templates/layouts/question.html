@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% block title %}
+    <title>3D Login</title>
+
+    {% endblock %}
+<link href="{%static "berkode.css" %}" rel="stylesheet">
+    
+  </head>
+  <body id="question-page">
+    <div id="question">
+      {% block content %}<!-- default content text (typically empty) -->{%endblock%}
+    </div>
+    <div id="scene">
+    {% block scene %}<!-- default content text (typically empty) -->{%endblock%}
+    </div>
+  </body>
+</html>

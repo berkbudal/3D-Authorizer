@@ -1,0 +1,23 @@
+{% extends 'layouts/question.html' %} 
+{% load get_item %}
+
+{%block content%} 
+<form method="POST" action="{% url 'step2' %}"">
+{% csrf_token %} 
+<h1>You passed step 1, {{name}}</h1>
+<p>Or should i say <strong>{{robot_name}}</strong></p>
+
+<p>Which object is hidden?</p>
+<ol>
+{% for answer in answers %}
+<li><label><input type="radio" name="answer" value="{{answer}}" {%if selected_answer == answer %}checked {%endif%} /> {{ answers|get_item:answer }}</label></li>
+{% endfor %}
+</ol>
+<hr />
+<a href="{% url 'step1' %}">Back</a>
+<button>Next</button>
+</form>
+{%endblock%}
+{%block scene%}
+<iframe width="1024" height="640" allowfullscreen src="https://v3d.net/93l"></iframe>
+{%endblock%}

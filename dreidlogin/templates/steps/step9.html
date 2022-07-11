@@ -1,0 +1,12 @@
+{% extends 'layouts/base.html' %} 
+{% load get_item %}
+
+{%block content%} 
+<p>Well done {{name}}, your profile has been created.</p>
+<p>Don't shy away of showing this profile to your friends and family to prove<br /> that you are indeed a human being.</p>
+
+<a href="{% url 'humans' %}">Profiles</a>
+
+{%endblock%}
+
+
