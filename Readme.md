@@ -1,4 +1,4 @@
-- Install [Docker](https://www.docker.com)
-- open the terminal at the project's root directory.
-- run `docker-compose up`
-- open `http://localhost:8000/dreid` on the browser.
+- [Docker](https://www.docker.com) installieren
+- Über Terminal zum Projektpfad gehen.
+- `docker-compose up` ausführen
+- `http://localhost:8000/dreid` im Browser öffnen.
