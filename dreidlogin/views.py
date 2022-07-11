@@ -196,7 +196,7 @@ def step9(request):
     sesh_copy = {**request.session}
     #clear the session info except for the robot name (this is used to know which profile is yours)
     for key in sesh_copy:
-        if key != 'robot_name':
+        if key != 'robot_name' and key!= 'name':
             del request.session[key]
     return render(request, 'steps/step9.html', context=buildContext(request.session))
 
