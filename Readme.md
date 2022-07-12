@@ -1,4 +1,6 @@
+- Daten als ZIP runterladen
 - [Docker](https://www.docker.com/products/docker-desktop/) installieren
+- Docker öffnen
 - Über Terminal zum Projektpfad gehen.
 - `docker-compose up` im Terminal ausführen.
 - `http://localhost:8000/dreid` im Browser öffnen.
